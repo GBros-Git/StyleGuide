@@ -731,3 +731,5 @@ equivalent of <span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt
 </span>    .   英文句点
     !   惊叹号
 </code></pre>
+
+    参考地址: [http://www.ghostchina.com/markdown-syntax/]
