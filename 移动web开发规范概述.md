@@ -85,4 +85,4 @@
 - [优化浏览器渲染](https://developers.google.com/speed/docs/best-practices/rendering)
 
 
-原稳地址：[http://alloyteam.github.io/Spirit/modules/Standard/index.html](http://alloyteam.github.io/Spirit/modules/Standard/index.html)
+原文地址：[http://alloyteam.github.io/Spirit/modules/Standard/index.html](http://alloyteam.github.io/Spirit/modules/Standard/index.html)
