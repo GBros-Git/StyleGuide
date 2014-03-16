@@ -313,10 +313,6 @@
 
 方法名通常是动词或动词短语。
 
-下划线可能出现在JUnit测试方法名称中用以分隔名称的逻辑组件。一个典型的模式是：
-
-`test<MethodUnderTest>_<state>`，例如：`testPop_emptyStack`。 并不存在唯一正确的方式来命名测试方法。
-
 #### 4.2.4 常量名
 
 常量名命名模式为CONSTANT_CASE，全部字母大写，用下划线分隔单词。那，到底什么算是一个常量？
@@ -393,17 +389,17 @@
 		                          YoutubeImporter*
 加星号处表示可以，但不推荐。
 
-Note：`在英语中，某些带有连字符的单词形式不唯一。例如："nonempty"和"non-empty"都是正确的，因此方法名checkNonempty和checkNonEmpty也都是正确的。`
+> Note：在英语中，某些带有连字符的单词形式不唯一。例如："nonempty"和"non-empty"都是正确的，因此方法名checkNonempty和checkNonEmpty也都是正确的。
 
 ### 五、编程实践
 
-#### 5.1 @Override：能用则用
+#### 5.1 @Override : 尽可能使用
 
 只要是合法的，就把`@Override`注解给用上。
 
 #### 5.2 捕获的异常：不能忽视
 
-除了下面的例子，对捕获的异常不做响应是极少正确的。(典型的响应方式是打印日志，或者如果它被认为是不可能的，则把它当作一个`AssertionError`重新抛出。)
+除了下面的例子，对捕获的异常不做响应是极易出错的。(典型的响应方式是打印日志，或者如果它被认为是不可能的，则把它当作一个`AssertionError`重新抛出。)
 
 如果它确实是不需要在catch块中做任何响应，需要做注释加以说明(如下面的例子)。
 
@@ -436,7 +432,7 @@ Note：`在英语中，某些带有连字符的单词形式不唯一。例如：
 
 极少会去重载`Object.finalize`。
 
-Tip：`不要使用finalize。如果你非要使用它，请先仔细阅读和理解Effective Java 第7条款：“Avoid Finalizers”，然后不要使用它。`
+> Tip：不要使用finalize。如果你非要使用它，请先仔细阅读和理解Effective Java 第7条款：“Avoid Finalizers”，然后不要使用它。
 
 ### 六、Javadoc
 
@@ -464,15 +460,15 @@ Javadoc块的基本格式如下所示：
 
 ##### 6.1.3 Javadoc标记
 
-标准的Javadoc标记按以下顺序出现：`@param, @return, @throws, @deprecated`, 前面这4种标记如果出现，描述都不能为空。 当描述无法在一行中容纳，连续行需要至少再缩进4个空格。
+标准的Javadoc标记按以下顺序出现：`@param, @return, @throws, @deprecated`, 前面这4种标记如果出现，描述都不能为空。 当描述无法在一行中容纳，连续行需要增加一个缩进。
 
-##### 6.2 摘要片段
+##### 6.2 摘要片段（一年后启用英文注释后按此标准执行）
 
 每个类或成员的Javadoc以一个简短的摘要片段开始。这个片段是非常重要的，在某些情况下，它是唯一出现的文本，比如在类和方法索引中。
 
 这只是一个小片段，可以是一个名词短语或动词短语，但不是一个完整的句子。它不会以`A {@code Foo} is a...`或`This method returns...`开头, 它也不会是一个完整的祈使句，如`Save the record...`。然而，由于开头大写及被加了标点，它看起来就像是个完整的句子。
 
-Tip：`一个常见的错误是把简单的Javadoc写成/** @return the customer ID */，这是不正确的。它应该写成/** Returns the customer ID. */。`
+> Tip：一个常见的错误是把简单的Javadoc写成/** @return the customer ID */，这是不正确的。它应该写成/** Returns the customer ID. */。
 
 #### 6.3 哪里需要使用Javadoc
 
@@ -484,7 +480,7 @@ Tip：`一个常见的错误是把简单的Javadoc写成/** @return the customer
 
  2. 单元测试类中的测试方法可能是不言自明的最常见例子了，我们通常可以从这些方法的描述性命名中知道它是干什么的，因此不需要额外的文档说明。
 
-Tip：`如果有一些相关信息是需要读者了解的，那么以上的例外不应作为忽视这些信息的理由。例如，对于方法名getCanonicalName， 就不应该忽视文档说明，因为读者很可能不知道词语canonical name指的是什么。`
+> Tip：如果有一些相关信息是需要读者了解的，那么以上的例外不应作为忽视这些信息的理由。例如，对于方法名getCanonicalName， 就不应该忽视文档说明，因为读者很可能不知道词语canonical name指的是什么。
 
 ##### 6.3.2 例外：重载
 
